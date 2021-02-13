@@ -1,0 +1,7 @@
+#explorer.ssh li.file {
+	color: #00ff00;
+}
+
+#explorer.ssh li.folder {
+	color: #5c5cff;
+}

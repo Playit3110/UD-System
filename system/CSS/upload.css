@@ -1,0 +1,36 @@
+.bar {
+	display: flex;
+	position: relative;
+}
+
+.bar .slider {
+	background-color: #0078d7;
+	bottom: 0;
+    display: block;
+	height: 100%;
+	position: absolute;
+	text-align: right;
+	top: 0;
+	transition: width 100ms linear;
+	width: 0;
+	z-index: -1;
+}
+
+.bar .size {
+	background-color: #ffffffc0;
+	border: none;
+	font-size: 30%;
+	position: absolute;
+	text-align: right;
+	top: 0;
+	right: 0;
+	width: unset;
+}
+
+.bar.success .slider {
+	background-color: #00af00 !important;
+}
+
+.bar.error .slider {
+	background-color: red !important;
+}

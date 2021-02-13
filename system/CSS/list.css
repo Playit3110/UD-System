@@ -1,0 +1,40 @@
+ul {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	overflow: auto;
+}
+
+ul li {
+	border: 1px solid black;
+	display: flex;
+	justify-items: stretch;
+	width: calc(100% - 2px);
+	word-break: break-word;
+}
+
+ul li span {
+	overflow-x: auto;
+	width: 100%;
+}
+
+/* ul li button, */
+ul li .btn {
+	border-left: 1px solid black;
+	display: block;
+	max-height: 3.5vw;
+	max-width: 3.5vw;
+	padding: 1%;
+}
+
+ul li svg {
+	display: block;
+	height: 100%;
+}
+
+
+ul li.menu {
+	flex-wrap: nowrap;
+	word-break: keep-all;
+}
