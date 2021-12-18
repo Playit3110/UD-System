@@ -11,7 +11,7 @@ body.dark {
 
 
 
-.dark nav, .dark main {
+.dark nav, .dark main, .dark main .title {
     border-color: white;
 }
 

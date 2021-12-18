@@ -3,7 +3,6 @@ window.onload = function() {
 	setInterval(function() {
 		toDark();
 	}, 60000);
-	window.onhashchange();
 
 	let url = new URL(location).searchParams;
 	if(url.has("dark")) document.body.classList.add("dark");
@@ -15,10 +14,13 @@ window.onload = function() {
 	if(h !== "") data.path = h;
 	Explorer.init(data);
 	Explorer.to();
+
+	window.onhashchange();
 }
 
 window.onhashchange = function() {
 	let hash = location.hash.substr(1);
+	if(!hash.endsWith("/")) hash += "/";
 	Explorer.to(hash, true);
 }
 

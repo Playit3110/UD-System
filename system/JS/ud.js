@@ -94,6 +94,9 @@ const UD = {
 							let elem = document.body.querySelector("[data-file=\"" + file.path + "\"");
 							elem.classList.add("success");
 							Explorer.to();
+							setTimeout(function() {
+								elem.remove();
+							}, 500);
 						}
 					},
 					"upload.onprogress": progress,
@@ -105,8 +108,9 @@ const UD = {
 	},
 	selected: function(elem) {
 		this.files[elem.className] = elem.files;
-		let list = elem.parentNode.parentNode.parentNode;
-		while(!list.lastElementChild.classList.contains("fixed")) {
+		// let list = elem.parentNode.parentNode.parentNode; // as list elem
+		let list = elem.parentElement.parentElement.nextElementSibling;
+		while(list.lastElementChild && !list.lastElementChild.classList.contains("fixed")) {
 			list.lastElementChild.remove();
 		}
 		for(let file of elem.files) {

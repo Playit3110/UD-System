@@ -55,30 +55,40 @@ function toimg($path) {
 			</li>
 		</ul>
 	</nav>
-	<main>
+	<main class="options">
 		<div class="title">
-			<span>Upload</span>
-			<button onclick="UD.upload(this.parentNode.parentNode)">
-				<?php include "./system/img/upload.svg"; ?>
-			</button>
+			<label>
+				<span>Files</span>
+				<input type="file" class="ifiles" name="files[]" multiple onchange="UD.selected(this)" hidden>
+			</label>
 		</div>
-		<div class="options">
-			<ul>
-				<li class="fixed menu">
-					<label>
-						<span>Files</span>
-						<input type="file" class="ifiles" name="files[]" multiple onchange="UD.selected(this)" hidden>
-					</label>
-				</li>
-			</ul>
-			<ul>
-				<li class="fixed menu">
-					<label>
-						<span>Folders</span>
-						<input type="file" class="ifolder" name="folders[]" directory webkitdirectory moxdirectory mozdirectory msdirectory odirectory multiple onchange="UD.selected(this)" hidden>
-					</label>
-				</li>
-			</ul>
+		<ul>
+			<!-- <li class="fixed menu">
+				<label>
+					<span>Files</span>
+					<input type="file" class="ifiles" name="files[]" multiple onchange="UD.selected(this)" hidden>
+				</label>
+			</li> -->
+		</ul>
+		<div class="title">
+			<label>
+				<span>Folders</span>
+				<input type="file" class="ifolder" name="folders[]" directory webkitdirectory moxdirectory mozdirectory msdirectory odirectory multiple onchange="UD.selected(this)" hidden>
+			</label>
+		</div>
+		<ul>
+			<!-- <li class="fixed menu">
+				<label>
+					<span>Folders</span>
+					<input type="file" class="ifolder" name="folders[]" directory webkitdirectory moxdirectory mozdirectory msdirectory odirectory multiple onchange="UD.selected(this)" hidden>
+				</label>
+			</li> -->
+		</ul>
+		<div class="title" onclick="UD.upload(this.parentNode.parentNode)">
+			<span>Upload</span>
+			<div class="btnimg">
+				<?php include "./system/img/upload.svg" ?>
+			</div>
 		</div>
 	</main>
 </body>

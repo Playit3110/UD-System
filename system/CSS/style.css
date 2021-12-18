@@ -50,21 +50,6 @@ main {
 	width: calc(50% - 1px);
 }
 
-main .title {
-	border: 1px solid black;
-	/* position: relative; */
-}
-
-main .title button {
-	border: 1px solid black;
-	bottom: 15px;
-	height: 3vw;
-	position: absolute;
-	right: 15px;
-	width: 3vw;
-	z-index: 2;
-}
-
 main .options {
 	display: flex;
 	flex-direction: column;
@@ -73,6 +58,27 @@ main .options {
 
 main .options .menu label {
 	width: 100%;
+}
+
+main .title {
+	border: 1px solid black;
+	display: flex;
+	justify-content: center;
+	/* position: relative; */
+}
+
+main .title .btnimg {
+	border: 1px solid black;
+	/* bottom: 15px;
+	height: 3vw;
+	position: absolute;
+	right: 15px; */
+	width: 3vw;
+	/* z-index: 2; */
+}
+
+main .title .btnimg svg {
+	vertical-align: sub;
 }
 
 

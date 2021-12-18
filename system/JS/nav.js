@@ -2,6 +2,7 @@ const Explorer = {
 	init: function({elem = document.body, path = "/"}) {
 		this.elem = elem;
 		this.path = path;
+		this.sorted = this.elem.getElementsByClassName("sort")[0].checked;
 	},
 	to: async function(dir = 0, abs = false) {
 		if(dir == -1) {
@@ -23,7 +24,7 @@ const Explorer = {
 			data: {
 				action: "folder",
 				dir: this.path,
-				sorted: this.elem.getElementsByClassName("sort")[0].checked
+				sorted: this.sorted
 			}
 		});
 
