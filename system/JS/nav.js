@@ -3,7 +3,7 @@ const Explorer = {
 		this.elem = elem;
 		this.path = path;
 	},
-	to: async function(dir = 0) {
+	to: async function(dir = 0, abs = false) {
 		if(dir == -1) {
 			this.path = this.path.split("/");
 			this.path.pop();
@@ -11,8 +11,12 @@ const Explorer = {
 			this.path = this.path.join("/") + "/";
 			if(this.path[0] !== "/") this.path = "/" + this.path;
 		} else if(dir !== 0) {
-			dir = dir.innerText;
-			this.path += dir + "/";
+			if(typeof dir == "object") dir = dir.innerText;
+			if(abs) {
+				this.path = dir;
+			} else {
+				this.path += dir + "/";
+			}
 		}
 
 		let paths = await request({
@@ -48,7 +52,7 @@ const Explorer = {
 		this.rename(false, elem, "add");
 	},
 	rename: function(e, elem, action = false) {
-		if(elem.tagName == "BUTTON") elem = elem.parentNode.firstElementChild;
+		if(elem.classList.contains("btn")) elem = elem.parentNode.firstElementChild;
 		let that = this;
 		let oldName = elem.innerText;
 		elem.onblur = function() {
@@ -87,7 +91,7 @@ const Explorer = {
 		if(e) e.preventDefault();
 	},
 	remove: function(elem) {
-		if(elem.tagName == "BUTTON") elem = elem.parentNode;
+		if(elem.classList.contains("btn")) elem = elem.parentNode;
 		if(!confirm("Do you really want to delete \""+elem.innerText+"\" ?")) return;
 		let path = elem.innerText;
 		request({

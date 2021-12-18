@@ -14,7 +14,7 @@ function add($fof) {
 	]);
 }
 
-function renameFoF($old, $new) {
+function renamePath($old, $new) {
 	$oldpath = filterpath($old["path"]);
 	$oldpath = fullpath($oldpath);
 

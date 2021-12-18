@@ -19,8 +19,7 @@ window.onload = function() {
 
 window.onhashchange = function() {
 	let hash = location.hash.substr(1);
-	let elem = document.getElementById("path");
-	elem.innerText = hash;
+	Explorer.to(hash, true);
 }
 
 function Textcopy(txt) {

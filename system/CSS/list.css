@@ -23,18 +23,27 @@ ul li span {
 ul li .btn {
 	border-left: 1px solid black;
 	display: block;
-	max-height: 3.5vw;
-	max-width: 3.5vw;
-	padding: 1%;
+	max-height: 100%;
+	max-width: 1.1em;
+	padding: 0.1em;
+	width: 100%;
 }
+
+/*ul li .btn::after {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}*/
 
 ul li svg {
 	display: block;
 	height: 100%;
+	width: 100%;
 }
 
 
 ul li.menu {
 	flex-wrap: nowrap;
+	white-space: nowrap;
 	word-break: keep-all;
 }

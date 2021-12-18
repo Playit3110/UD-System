@@ -23,6 +23,10 @@ body.dark {
     background-color: #303030;
 }
 
+.dark .btn {
+    border-color: white;
+}
+
 
 .dark #explorer.ssh div.file {
 	color: #00af00;
