@@ -1,30 +1,30 @@
 body.dark {
-    background-color: #404040;
-    color: white;
-    border-color: white;
+	background-color: #404040;
+	color: white;
+	border-color: white;
 }
 
 .dark svg {
-    fill: white;
-    stroke: white;
+	fill: white;
+	stroke: white;
 }
 
 
 
 .dark nav, .dark main, .dark main .title {
-    border-color: white;
+	border-color: white;
 }
 
 .dark ul li {
-    border-color: white;
+	border-color: white;
 }
 
 .dark #explorer li.folder {
-    background-color: #303030;
+	background-color: #303030;
 }
 
 .dark .btn {
-    border-color: white;
+	border-color: white;
 }
 
 
@@ -39,17 +39,17 @@ body.dark {
 
 
 .dark .bar .size {
-    background-color: #404040c0;
+	background-color: #404040c0;
 }
 
 .dark .bar .slider {
-    background-color: darkblue;
+	background-color: darkblue;
 }
 
 .dark .bar.success .slider {
-    background-color: darkgreen;
+	background-color: darkgreen;
 }
 
 .dark .bar.error .slider {
-    background-color: darkred;
+	background-color: darkred;
 }

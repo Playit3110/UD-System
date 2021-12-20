@@ -38,6 +38,10 @@ nav {
 	stroke: #0078d7;
 }
 
+#explorer li.folder {
+    background-color: #e0e0e0;
+}
+
 
 
 main {

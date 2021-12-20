@@ -36,7 +36,7 @@ function toimg($path) {
 					<?php include "./system/img/refresh.svg"; ?>
 				</div>
 				<label class="btn">
-					<input type="checkbox" class="sort" hidden>
+					<input type="checkbox" class="sort" onclick="Explorer.sorted = this.checked" hidden>
 					<?php include "./system/img/bar-graph.svg"; ?>
 				</label>
 				<label class="btn">

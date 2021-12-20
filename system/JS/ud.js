@@ -16,11 +16,16 @@ const UD = {
 		// 	},
 		// 	cb: {
 		// 		// responseType: "\"blob\"",
-		// 		fofname: "\""+fofname+"\"",
-		// 		onreadystatechange: null,
+		// 		// fofname: "\""+fofname+"\"",
+		// 		onreadystatechange: function(e) {
+		// 			if(this.readyState == this.HEADERS_RECEIVED) {
+		// 				this.fofname = this.getResponseHeader("Content-Disposition");
+		// 				this.fofname = this.fofname.split("\"")[1];
+		// 			}
+		// 		},
 		// 		onload: function(e) {
 		// 			if(this.status == 200) {
-		// 				// Create a new Blob object using the response data of the onload object
+		// 				//Create a new Blob object using the response data of the onload object
 		// 				var blob = new Blob([this.response]);
 		// 				//Create a link element, hide it, direct it towards the blob, and then 'click' it programatically
 		// 				let a = document.createElement("a");
@@ -35,11 +40,13 @@ const UD = {
 		// 				//release the reference to the file by revoking the Object URL
 		// 				window.URL.revokeObjectURL(url);
 		// 			} else {
+		// 				alert(this.response);
 		// 				//deal with your error state here
 		// 			}
 		// 		}
 		// 	}
 		// });
+
 		let form = document.createElement("form");
 		form.action = "./system/api.php";
 		form.method = "POST";
