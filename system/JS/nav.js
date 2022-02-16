@@ -19,6 +19,7 @@ const Explorer = {
 				this.path += dir + "/";
 			}
 		}
+		this.path = decodeURI(this.path);
 
 		let paths = await request({
 			data: {
@@ -59,7 +60,8 @@ const Explorer = {
 		elem.onblur = function() {
 			elem.removeAttribute("contenteditable");
 			let newName = elem.innerText;
-			newName = newName.replace(/[^a-zA-Z0-9_\[\]\.]/g, "");
+			newName = newName.replace(/[ ]/g, "_");
+			newName = newName.replace(/[^a-zA-Z0-9_\[\]\.\-]/g, "");
 			if(oldName == newName) return;
 			if(action == false && !confirm("Do you really want to rename \""+oldName+"\" to \""+newName+"\"?")) return;
 			let div = elem.parentNode;

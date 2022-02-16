@@ -12,6 +12,7 @@ function download($path) {
 	} else if(is_dir($path)) {
 		chdir("$path/../");
 		$bn = basename($path);
+		setlocale(LC_CTYPE, "en_US.UTF-8");
 		if(preg_match('/linux/i', $_SERVER["HTTP_USER_AGENT"])) {
 			// tar
 			$compressed = shell_exec("tar -czf - ".escapeshellarg($bn));
@@ -19,7 +20,7 @@ function download($path) {
 			header("Content-Disposition: attachment; filename=\"$bn.tar.gz\"");
 		} else {
 			// zip
-			$compressed = shell_exec("zip -r - ".escapeshellarg($bn)." | cat");
+			$compressed = shell_exec("zip -qr - ".escapeshellarg($bn)." | cat");
 			// header("Content-Type: application/octet-stream");
 			// header("Content-Type: application/zip");
 			header("Content-Disposition: attachment; filename=\"$bn.zip\"");
